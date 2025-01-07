@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+:root {
+    --cor-background: #ededf2;
+    --cor-cabecalho: #a6aec1;
+    --cor-rodape: #6c788e;
+    --cor-texto: #040F1A;
+    --cor-principal: #F2F2F2;
+
+    --fonte-padrao: 'Arial', sans-serif;
+    --fonte-titulo: 'Georgia', serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-padrao);
+    background-color: var(--cor-background);
+    color: var(--cor-texto);
+}
+
+header {
+    background-color: var(--cor-cabecalho);
+    color: var(--cor-principal);
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header>h1 {
+    font-family: var(--fonte-titulo);
+}
+
+header>nav {
+    display: flex;
+    /* flex-flow: row nowrap;
+    flex: auto;
+    justify-content: center; */
+}
+
+
+main>section {
+
+    background-color: #cfd5e1;
+
+    width: 80vw;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+#produto-form {
+    padding: 8px;
+    gap: 7px;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+form>label {
+    font-weight: bold;
+}
+
+form input,
+form textarea,
+form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #6c788e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #fff;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--cor-rodape);
+    color: var(--cor-principal);
+    padding: 10px;
+}
+
+footer>a {
+    text-decoration: none;
+    color: var(--cor-principal);
+}
