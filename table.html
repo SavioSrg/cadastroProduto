@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Formulário</title>
+</head>
+
+<body>
+    <header>
+        <h1>Tabela</h1>
+        <nav>
+            <button id="adicionarNovoProduto" aria-label="Cadastrar novo produto">Cadastrar Novo Produto</button>
+            <button id="remove-products-btn" aria-label="Cadastrar novo produto">Remover produtos</button>
+        </nav>
+    </header>
+    <main>
+        <section id="list-container">
+            <h2>Lista de Produtos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Valor</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+                    <!-- Produtos serão exibidos aqui -->
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- Modal de Edição -->
+        <section id="edit-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-modal">&times;</span>
+                <h2>Editar Produto</h2>
+                <form id="edit-form">
+                    <label for="edit-name">Nome do Produto:</label>
+                    <input type="text" id="edit-name" required>
+                    <label for="edit-description">Descrição:</label>
+                    <textarea id="edit-description" required></textarea>
+                    <label for="edit-price">Valor:</label>
+                    <input type="number" id="edit-price" min="0" step="0.01" required>
+                    <label for="edit-available">Disponível para venda:</label>
+                    <select id="edit-available" required>
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                    <button type="submit">Salvar Alterações</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <p>Desenvolvido por <a href="#">Sávio Sérgio</a></p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
