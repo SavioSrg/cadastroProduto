@@ -12,7 +12,7 @@
 <body>
     <header>
         <h1>Lista de Produtos</h1>
-        <nav>
+        <nav class="button-header">
             <button id="new-product-btn">Cadastrar Novo Produto</button>
             <button id="remove-products-btn" onclick="removerProdutos()">Remover produtos</button>
         </nav>
@@ -38,8 +38,8 @@
         </section>
 
         <!-- Modal de Edição -->
-        <section id="edit-modal" class="modal" style="display: none;">
-            <div class="modal-content">
+        <div id="edit-modal" class="modal" style="display: none;">
+            <section class="modal-content">
                 <span class="close-btn" id="close-modal">&times;</span>
                 <h2>Editar Produto</h2>
                 <form id="edit-form">
@@ -60,8 +60,8 @@
 
                     <button type="submit">Salvar Alterações</button>
                 </form>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
     <footer>
         <p>Desenvolvido por <a href="#">Sávio Sérgio</a></p>

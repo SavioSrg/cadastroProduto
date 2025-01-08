@@ -1,175 +1,178 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-    --cor-background: #ededf2;
-    --cor-cabecalho: #a6aec1;
-    --cor-rodape: #6c788e;
-    --cor-texto: #040F1A;
-    --cor-principal: #F2F2F2;
+  --cor-background: #ededf2;
+  --cor-cabecalho: #a6aec1;
+  --cor-rodape: #6c788e;
+  --cor-texto: #040F1A;
+  --cor-principal: #F2F2F2;
 
-    --fonte-padrao: 'Arial', sans-serif;
-    --fonte-titulo: 'Georgia', serif;
+  --fonte-padrao: "Inter", serif;
 }
 
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: var(--fonte-padrao);
-    background-color: var(--cor-background);
-    color: var(--cor-texto);
+  font-family: var(--fonte-padrao);
+  background-color: var(--cor-background);
+  color: var(--cor-texto);
+  font-weight: 400;
 }
 
 header {
-    background-color: var(--cor-cabecalho);
-    color: var(--cor-principal);
-    padding: 10px;
+  height: 7vh;
+  background-color: var(--cor-cabecalho);
+  color: var(--cor-principal);
+  padding: 10px;
+  
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header>h1 {
-    font-family: var(--fonte-titulo);
+  font-family: var(--fonte-padrao);
+  font-weight: 600;
 }
 
-nav{
-    max-width: 300px;
-    margin: 10px 0;
-    display: flex;
-    flex: auto;
-    justify-content: space-around;
-}
+.button-header{
+  display: flex;
+  flex-basis: 420px;
+  justify-content: space-around;
 
-a{
-    text-decoration: none;
+  text-decoration: none;
 }
 
 main>section {
 
-    background-color: #cfd5e1;
+  background-color: #cfd5e1;
 
-    width: 80vw;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 18px;
+  width: 80vw;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 18px;
 }
 
 form {
-    padding: 8px;
-    gap: 7px;
+  padding: 8px;
+  gap: 7px;
 
-    display: flex;
-    flex-flow: column nowrap;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 form>label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 form input,
 form textarea,
 form select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 
 form button {
-    padding: 10px 15px;
-    background-color: #6c788e;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 10px 15px;
+  background-color: #6c788e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 form button:hover {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px auto;
-  }
-  
-  table, th, td {
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  button {
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
 
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background-color: var(--cor-background);
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
 
-    width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 18px;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .edit-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .edit-btn:hover {
-    background-color: #45a049;
-  }
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--cor-background);
+
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 18px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
+}
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    background-color: var(--cor-rodape);
-    color: var(--cor-principal);
-    padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--cor-rodape);
+  color: var(--cor-principal);
+  padding: 10px;
 }
