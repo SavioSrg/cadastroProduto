@@ -44,48 +44,39 @@ header>nav {
     justify-content: center; */
 }
 
+
 main>section {
+
     background-color: #cfd5e1;
-    max-width: 460px;
-    margin: 30px auto;
-    padding: 16px;
+
+    width: 80vw;
+    margin: 20px auto;
+    padding: 20px;
     border-radius: 18px;
 }
 
-h2{
-    text-align: center;
-    font-family: var(--fonte-titulo);
-}
+#produto-form {
+    padding: 8px;
+    gap: 7px;
 
-form {
     display: flex;
     flex-flow: column nowrap;
-    margin-top: 20px;
 }
 
 form>label {
-    padding: 5px;
     font-weight: bold;
 }
 
-form>input,
-form>textarea,
-form>select, form>nav>button {
-    font-family: var(--fonte-padrao);
-    font-size: 1rem;
+form input,
+form textarea,
+form select {
     padding: 10px;
-    margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    font-size: 1rem;
 }
 
-form>nav{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-}
-
-form>nav>button {
+form button {
     padding: 10px 15px;
     background-color: #6c788e;
     border: none;
@@ -96,21 +87,6 @@ form>nav>button {
 form button:hover {
     background-color: #fff;
 }
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px auto; 
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
 
 .modal {
     display: none;
