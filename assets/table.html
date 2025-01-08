@@ -5,34 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Formulário</title>
+    <link rel="stylesheet" href="css/style-test.css">
+    <title>Tabela</title>
 </head>
 
 <body>
     <header>
-        <h1>Formulário</h1>
+        <h1>Lista de Produtos</h1>
         <nav>
-            <a href="table.html">Tabela</a>
+            <button id="new-product-btn">Cadastrar Novo Produto</button>
+            <button id="remove-products-btn" onclick="removerProdutos()">Remover produtos</button>
         </nav>
     </header>
     <main>
-        <section id="list-container" style="display: none;">
-            <h2>Lista de Produtos</h2>
-            <button id="new-product-btn">Cadastrar Novo Produto</button>
-            <button id="remove-products-btn" onclick="removerProdutos()">Remover produtos</button>
+        <section id="list-container">
             <table>
                 <thead>
                     <tr>
                         <th>Nome
-                            <button type="button" onclick="nomesAsc()" id="nome-asc" title="Ordem crescente">-></button>
-                            <button type="button" onclick="nomesDec()" id="nome-dec" class="sumir"
-                                title="Ordem decrescente">-></button>
+                            <button type="button" onclick="ordenarNomes()"><img id="imagemOrdenarNome" alt="Ordernar"></button>
                         </th>
                         <th>Valor
-                            <button type="button" onclick="valoresAsc()" id="valor-asc" class="sumir"
-                                title="Ordem crescente">-></button>
-                            <button type="button" onclick="valoresDec()" id="valor-dec"
-                                title="Ordem decrescente">-></button>
+                            <button onclick="ordenarValores()"><img id="imagemOrdenarValor" alt="Ordenar"></button>
                         </th>
                         <th>Ações</th>
                     </tr>
@@ -44,7 +38,7 @@
         </section>
 
         <!-- Modal de Edição -->
-        <div id="edit-modal" class="modal" style="display: none;">
+        <section id="edit-modal" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close-btn" id="close-modal">&times;</span>
                 <h2>Editar Produto</h2>
@@ -67,12 +61,13 @@
                     <button type="submit">Salvar Alterações</button>
                 </form>
             </div>
-        </div>
+        </section>
     </main>
     <footer>
         <p>Desenvolvido por <a href="#">Sávio Sérgio</a></p>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/script-table.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
