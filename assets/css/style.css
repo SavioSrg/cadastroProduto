@@ -88,10 +88,6 @@ form button:hover {
     background-color: #fff;
 }
 
-.modal {
-    display: none;
-}
-
 footer {
     position: fixed;
     bottom: 0;
