@@ -104,9 +104,6 @@ document.getElementById('form-editar-produto').addEventListener('submit', functi
     document.getElementById('modal-editar-produto').style.display = 'none';
 });
 
-function removerProdutos() {
-}
-
 //Ordenar a tabela
 let ordemNome = 1;
 let ordemValor = 0;
