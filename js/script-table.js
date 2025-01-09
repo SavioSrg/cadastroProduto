@@ -75,7 +75,7 @@ function openEditModal(index) {
     document.getElementById('nome-editar').value = product.name;
     document.getElementById('descricao-editar').value = product.description;
     document.getElementById('valor-editar').value = product.price;
-    document.getElementById('disponibilidade-editar').value === true ? Sim : Não = product.available;
+    document.getElementById('disponibilidade-editar').value = (product.available === true) ? value = '1' : value = '0';
 
     document.getElementById('form-editar-produto').setAttribute('data-edit-index', index);
     document.getElementById('modal-editar-produto').style.display = 'flex';
@@ -93,7 +93,7 @@ document.getElementById('form-editar-produto').addEventListener('submit', functi
     const name = document.getElementById('nome-editar').value;
     const description = document.getElementById('descricao-editar').value;
     const price = parseFloat(document.getElementById('valor-editar').value);
-    const available = Boolean(document.getElementById('disponibilidade-editar').value);
+    const available = Boolean(Number(document.getElementById('disponibilidade-editar').value));
 
     const editIndex = document.getElementById('form-editar-produto').getAttribute('data-edit-index');
     produtos[editIndex] = { name, description, price, available };

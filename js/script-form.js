@@ -7,7 +7,7 @@ document.getElementById('form-cadastro-produto').addEventListener('submit', func
     const name = document.getElementById('nome').value;
     const description = document.getElementById('descricao').value;
     const price = parseFloat(document.getElementById('valor').value);
-    const available = Boolean(document.getElementById('disponibilidade').value);
+    const available = Boolean(Number(document.getElementById('disponibilidade').value));
 
     if (localStorage.hasOwnProperty("produtos")) {
         produtos = JSON.parse(localStorage.getItem("produtos"));
