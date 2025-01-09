@@ -2,19 +2,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
+
+
+  /* Cores de fundo */
   --cor-background: #ededf2;
   --cor-cabecalho: #a6aec1;
-  --cor-destaque: #6c788e;
-  --cor-texto: #040F1A;
-  --cor-principal: #F2F2F2;
+  --cor-section: #cfd5e1;
+  --cor-modal: rgba(0, 0, 0, 0.3);
+  --cor-rodape: #6c788e;
 
+  /* Cores de texto */
+  --cor-texto: #040F1A;
+  --cor-texto-claro: #F2F2F2;
+  --cor-placeholder: #888;
+
+  /* Cores de botões */
+  --cor-navegacao: #6c788e;
+  --cor-botao: #007BFF;
+  --cor-botao-hover: #0056b3;
+  --cor-botao-editar: #4CAF50;
+  --cor-botao-editar-hover: #45a049;
+  --cor-botao-excluir: firebrick;
+  --cor-botao-excluir-hover: #ffff;
+
+  /* Cores de feedback */
+  --cor-feedback: #155724;
+  --cor-feedback-bg: #d4edda;
+
+  /* Fonte */
   --fonte-padrao: "Inter", serif;
+
+  /* Outras cores */
+  --cor-borda: #ccc;
+  --cor-tabela-borda: #ddd;
 }
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -25,11 +58,10 @@ body {
 }
 
 header {
-  height: 7vh;
   background-color: var(--cor-cabecalho);
-  color: var(--cor-principal);
+  color: var(--cor-texto-claro);
   padding: 10px;
-  
+
 
   display: flex;
   justify-content: space-around;
@@ -47,30 +79,45 @@ header>nav {
   justify-content: space-around;
 }
 
-.button-header{
- text-decoration: none;
- font-weight: 500;
- padding: 10px 20px;
- border-radius: 15px;
- background-color: var(--cor-destaque);
+.button-header {
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: var(--cor-navegacao);
+  color: var(--cor-texto-claro);
+  text-decoration: none;
 }
 
+.button-header:hover {
+  background-color: none;
+}
+
+
 main {
-  height: 84vh;
-  max-width: 900px;
-  margin: 0 auto;
   flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 main>section {
-  background-color: #cfd5e1;
+  background-color: var(--cor-section);
 
   width: 95%;
   margin: auto;
-  margin-top: 4vh;
+  margin-top: 40px;
   padding: 20px;
   border-radius: 18px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+#form-container {
+  max-width: 600px;
 }
 
 form {
@@ -89,7 +136,7 @@ form input,
 form textarea,
 form select {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--cor-borda);
   border-radius: 8px;
   font-size: 1rem;
   margin-bottom: 5px;
@@ -98,44 +145,59 @@ form select {
 form input:focus,
 form textarea:focus,
 form select:focus {
-    border-color: var(--cor-destaque);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-color: var(--cor-navegacao);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 ::placeholder {
-  color: #888;
+  color: var(--cor-placeholder);
   font-weight: 100;
   font-size: 1em;
 
 }
 
-.button-form{
+.button-form {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-basis: 0 100px;
 }
 
-form>button {
+form>nav>button {
   padding: 10px 15px;
-  background-color: var(--cor-destaque);
-  color: var(--cor-principal);
+  background-color: var(--cor-botao);
+  color: var(--cor-texto-claro);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-form button:hover {
-  background-color: var(--cor-destaque);
-  color: var(--cor-principal);
+form>nav>button:hover {
+  background-color: var(--cor-botao-hover);
 }
 
 #mensagem-feedback {
-    font-size: 1rem;
-    padding: 10px;
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px;
+  background-color: var(--cor-feedback-bg);
+  color: var(--cor-feedback);
+}
+
+#modal-vazio {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 420px;
+  background-color: var(--cor-section);
+  margin: auto;
+  font-style: italic;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--cor-texto-claro);
+  border-radius: 22px;
 }
 
 table {
@@ -147,7 +209,7 @@ table {
 table,
 th,
 td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--cor-tabela-borda);
 }
 
 th,
@@ -158,15 +220,15 @@ td {
 
 button {
   padding: 10px;
-  background-color: #007BFF;
-  color: white;
+  background-color: var(--cor-botao);
+  color: var(--cor-texto-claro);
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--cor-botao-hover);
 }
 
 .modal {
@@ -175,7 +237,7 @@ button:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--cor-modal);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -195,12 +257,13 @@ button:hover {
   top: 10px;
   right: 15px;
   font-size: 40px;
-  color: white;
+  color: var(--cor-texto-claro);
   cursor: pointer;
 }
 
-.edit-btn {
-  background-color: #4CAF50;
+.edit-btn,
+.excluir-btn {
+  background-color: var(--cor-botao-editar);
   color: white;
   padding: 5px 10px;
   border: none;
@@ -209,14 +272,27 @@ button:hover {
 }
 
 .edit-btn:hover {
-  background-color: #45a049;
+  background-color: var(--cor-botao-editar-hover);
 }
 
+#reset,
+.excluir-btn {
+  background-color: var(--cor-botao-excluir);
+}
+
+#reset:hover,
+.excluir-btn:hover {
+  background-color: var(--cor-botao-excluir-hover);
+}
+
+
 footer {
-  height: 5vh;
-  width: 100%;
   text-align: center;
-  background-color: var(--cor-destaque);
-  color: var(--cor-principal);
+  background-color: var(--cor-rodape);
   padding: 10px;
+  color: var(--cor-texto-claro);
+}
+
+footer>p>a {
+  color: var(--cor-texto-claro);
 }

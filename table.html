@@ -13,17 +13,18 @@
     <header>
         <h1>Lista de Produtos</h1>
         <nav>
-            <button id="new-product-btn" class="button-header">Cadastrar Novo Produto</button>
-            <button id="remove-products-btn" class="button-header" onclick="removerProdutos()">Remover produtos</button>
+            <button id="new-product-btn">Cadastrar Novo Produto</button>
+            <button id="remove-products-btn" onclick="removerProdutos()">Remover produtos</button>
         </nav>
     </header>
     <main>
-        <section id="list-container">
+        <section id="list-container" style="display: none;">
             <table>
                 <thead>
                     <tr>
                         <th>Nome
-                            <button type="button" onclick="ordenarNomes()"><img id="imagemOrdenarNome" alt="Ordernar"></button>
+                            <button type="button" onclick="ordenarNomes()"><img id="imagemOrdenarNome"
+                                    alt="Ordernar"></button>
                         </th>
                         <th>Valor
                             <button onclick="ordenarValores()"><img id="imagemOrdenarValor" alt="Ordenar"></button>
@@ -36,6 +37,10 @@
                 </tbody>
             </table>
         </section>
+        <div id="modal-vazio">
+            <img src="imagens/caixa.png" alt="caixa-vazia">
+            <p>Cadastre um produto</p>
+        </div>
 
         <!-- Modal de Edição -->
         <div id="edit-modal" class="modal" style="display: none;">
