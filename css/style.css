@@ -17,13 +17,13 @@
   --cor-placeholder: #888;
 
   /* Cores de botões */
-  --cor-navegacao: #6c788e;
+  --cor-navegacao: #8293B6;
   --cor-botao: #007BFF;
-  --cor-botao-hover: #0056b3;
+  --cor-botao-hover:  #396FAA;
   --cor-botao-editar: #4CAF50;
   --cor-botao-editar-hover: #45a049;
-  --cor-botao-excluir: firebrick;
-  --cor-botao-excluir-hover: #ffff;
+  --cor-botao-excluir:#D92525;
+  --cor-botao-excluir-hover:#b22222;
 
   /* Cores de feedback */
   --cor-feedback: #155724;
@@ -83,13 +83,13 @@ header>nav {
   font-weight: 500;
   padding: 10px 20px;
   border-radius: 15px;
-  background-color: var(--cor-navegacao);
+  background-color: var(--cor-botao);
   color: var(--cor-texto-claro);
   text-decoration: none;
 }
 
 .btn-header:hover {
-  background-color: none;
+  background-color: var(--cor-botao-hover);
 }
 
 
