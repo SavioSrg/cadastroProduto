@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style-test.css">
     <title>Tabela</title>
 </head>
 
@@ -13,8 +12,8 @@
     <header>
         <h1>Lista de Produtos</h1>
         <nav>
-            <button id="new-product-btn">Cadastrar Novo Produto</button>
-            <button id="remove-products-btn" onclick="removerProdutos()">Remover produtos</button>
+            <button id="btn-cadastrar-produto">Cadastrar Novo Produto</button>
+            <button id="btn-remover-produtos">Remover produtos</button>
         </nav>
     </header>
     <main>
@@ -23,42 +22,41 @@
                 <thead>
                     <tr>
                         <th>Nome
-                            <button type="button" onclick="ordenarNomes()"><img id="imagemOrdenarNome"
-                                    alt="Ordernar"></button>
+                            <button type="button" onclick="ordenarNomes()"><img id="img-ordenar-nome"alt="Ordernar"></button>
                         </th>
                         <th>Valor
-                            <button onclick="ordenarValores()"><img id="imagemOrdenarValor" alt="Ordenar"></button>
+                            <button onclick="ordenarValores()"><img id="img-ordenar-valor" alt="Ordenar"></button>
                         </th>
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <tbody id="product-list">
+                <tbody id="lista-produtos">
                     <!-- Produtos serão exibidos aqui -->
                 </tbody>
             </table>
         </section>
-        <div id="modal-vazio">
+        <div id="modal-produtos-vazios">
             <img src="imagens/caixa.png" alt="caixa-vazia">
             <p>Cadastre um produto</p>
         </div>
 
         <!-- Modal de Edição -->
-        <div id="edit-modal" class="modal" style="display: none;">
+        <div id="modal-editar-produto" class="modal" style="display: none;">
             <section class="modal-content">
-                <span class="close-btn" id="close-modal">&times;</span>
+                <span class="fechar-modal" id="btn-fechar-modal">&times;</span>
                 <h2>Editar Produto</h2>
-                <form id="edit-form">
-                    <label for="edit-name">Nome do Produto:</label>
-                    <input type="text" id="edit-name" required>
+                <form id="form-editar-produto">
+                    <label for="nome-editar">Nome do Produto:</label>
+                    <input type="text" id="nome-editar" required>
 
-                    <label for="edit-description">Descrição:</label>
-                    <textarea id="edit-description" required></textarea>
+                    <label for="descricao-editar">Descrição:</label>
+                    <textarea id="descricao-editar" required></textarea>
 
-                    <label for="edit-price">Valor:</label>
-                    <input type="number" id="edit-price" min="0" step="0.01" required>
+                    <label for="valor-editar">Valor:</label>
+                    <input type="number" id="valor-editar" min="0" step="0.01" required>
 
-                    <label for="edit-available">Disponível para venda:</label>
-                    <select id="edit-available" required>
+                    <label for="disponibilidade-editar">Disponível para venda:</label>
+                    <select id="disponibilidade-editar" required>
                         <option value="1">Sim</option>
                         <option value="0">Não</option>
                     </select>
@@ -72,7 +70,6 @@
         <p>Desenvolvido por <a href="#">Sávio Sérgio</a></p>
     </footer>
     <script src="js/script-table.js"></script>
-    <script src="script.js"></script>
 </body>
 
 </html>

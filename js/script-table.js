@@ -2,23 +2,23 @@ window.onload = function () {
     updateProductList()
 };
 
-if (localStorage.hasOwnProperty("products")) {
-    products = JSON.parse(localStorage.getItem("products"))
-    products.sort((a, b) => a.price - b.price);
+if (localStorage.hasOwnProperty("produtos")) {
+    produtos = JSON.parse(localStorage.getItem("produtos"))
+    produtos.sort((a, b) => a.price - b.price);
     document.getElementById('list-container').style.display = 'block';
-    document.getElementById('modal-vazio').style.display = 'none';
+    document.getElementById('modal-produtos-vazios').style.display = 'none';
 
 } else {
-    document.getElementById('remove-products-btn').style.display = 'none';
+    document.getElementById('btn-remover-produtos').style.display = 'none';
     alert("Tabela não possui dados, favor inserir dados")
 }
 
 // Atualizar a tabela de produtos
 function updateProductList() {
-    const list = document.getElementById('product-list');
+    const list = document.getElementById('lista-produtos');
     list.innerHTML = '';
 
-    products.forEach((product, index) => {
+    produtos.forEach((product, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
         <td>${product.name}</td>
@@ -56,52 +56,52 @@ function updateProductList() {
 // Função para remover um elemento do localStorage
 function removeFromLocalStorage(index) {
 
-    products.splice(index, 1);
-    localStorage.setItem("products", JSON.stringify(products));
+    produtos.splice(index, 1);
+    localStorage.setItem("produtos", JSON.stringify(produtos));
     alert(`Item removido.`);
-    products.sort((a, b) => a.price - b.price);
+    produtos.sort((a, b) => a.price - b.price);
     updateProductList()
 }
 
 // Botão para cadastrar novo produto
-document.getElementById('new-product-btn').addEventListener('click', function () {
+document.getElementById('btn-cadastrar-produto').addEventListener('click', function () {
     window.location.href = 'index.html';
 });
 
 // Abrir modal de edição
 function openEditModal(index) {
-    const product = products[index];
+    const product = produtos[index];
 
-    document.getElementById('edit-name').value = product.name;
-    document.getElementById('edit-description').value = product.description;
-    document.getElementById('edit-price').value = product.price;
-    document.getElementById('edit-available').value === true ? Sim : Não = product.available;
+    document.getElementById('nome-editar').value = product.name;
+    document.getElementById('descricao-editar').value = product.description;
+    document.getElementById('valor-editar').value = product.price;
+    document.getElementById('disponibilidade-editar').value === true ? Sim : Não = product.available;
 
-    document.getElementById('edit-form').setAttribute('data-edit-index', index);
-    document.getElementById('edit-modal').style.display = 'flex';
+    document.getElementById('form-editar-produto').setAttribute('data-edit-index', index);
+    document.getElementById('modal-editar-produto').style.display = 'flex';
 }
 
 // Fechar modal
-document.getElementById('close-modal').addEventListener('click', function () {
-    document.getElementById('edit-modal').style.display = 'none';
+document.getElementById('btn-fechar-modal').addEventListener('click', function () {
+    document.getElementById('modal-editar-produto').style.display = 'none';
 });
 
 // Salvar alterações do modal
-document.getElementById('edit-form').addEventListener('submit', function (e) {
+document.getElementById('form-editar-produto').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const name = document.getElementById('edit-name').value;
-    const description = document.getElementById('edit-description').value;
-    const price = parseFloat(document.getElementById('edit-price').value);
-    const available = Boolean(document.getElementById('edit-available').value);
+    const name = document.getElementById('nome-editar').value;
+    const description = document.getElementById('descricao-editar').value;
+    const price = parseFloat(document.getElementById('valor-editar').value);
+    const available = Boolean(document.getElementById('disponibilidade-editar').value);
 
-    const editIndex = document.getElementById('edit-form').getAttribute('data-edit-index');
-    products[editIndex] = { name, description, price, available };
-    localStorage.setItem("products", JSON.stringify(products));
+    const editIndex = document.getElementById('form-editar-produto').getAttribute('data-edit-index');
+    produtos[editIndex] = { name, description, price, available };
+    localStorage.setItem("produtos", JSON.stringify(produtos));
 
-    products.sort((a, b) => a.price - b.price);
+    produtos.sort((a, b) => a.price - b.price);
     updateProductList();
-    document.getElementById('edit-modal').style.display = 'none';
+    document.getElementById('modal-editar-produto').style.display = 'none';
 });
 
 function removerProdutos() {
@@ -110,18 +110,18 @@ function removerProdutos() {
 //Ordenar a tabela
 let ordemNome = 1;
 let ordemValor = 0;
-let imagemOrdernarNome = document.getElementById('imagemOrdenarNome')
-let imagemOrdernarValores = document.getElementById('imagemOrdenarValor')
+let imagemOrdernarNome = document.getElementById('img-ordenar-nome')
+let imagemOrdernarValores = document.getElementById('img-ordenar-valor')
 imagemOrdernarNome.src = ("imagens/swap.svg");
 imagemOrdernarValores.src = ("imagens/arrow_upward.svg");
 
 function ordenarNomes() {
     if (ordemNome === 1) {
-        products.sort((a, b) => a.name.localeCompare(b.name));
+        produtos.sort((a, b) => a.name.localeCompare(b.name));
         ordemNome = 0;
         imagemOrdernarNome.src = ("imagens/arrow_upward.svg")
     } else {
-        products.sort((a, b) => b.name.localeCompare(a.name));
+        produtos.sort((a, b) => b.name.localeCompare(a.name));
         ordemNome = 1;
         imagemOrdernarNome.src = ("imagens/arrow_downward.svg")
     }
@@ -131,11 +131,11 @@ function ordenarNomes() {
 
 function ordenarValores() {
     if (ordemValor === 0) {
-        products.sort((a, b) => a.price - b.price);
+        produtos.sort((a, b) => a.price - b.price);
         ordemValor = 1;
         imagemOrdernarValores.src = ("imagens/arrow_upward.svg");
     } else {
-        products.sort((a, b) => b.price - a.price);
+        produtos.sort((a, b) => b.price - a.price);
         ordemValor = 0;
         imagemOrdernarValores.src = ("imagens/arrow_downward.svg");
     }
@@ -143,11 +143,11 @@ function ordenarValores() {
     updateProductList();
 }
 
-const resetButton = document.getElementById('remove-products-btn');
+const resetButton = document.getElementById('btn-remover-produtos');
 resetButton.addEventListener('click', () => {
     const confirmReset = confirm('Tem certeza de que deseja limpar os campos do formulário?');
     if (confirmReset) {
-        localStorage.removeItem("products");
+        localStorage.removeItem("produtos");
         window.location.reload();
     }
 });

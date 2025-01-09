@@ -1,37 +1,28 @@
-let products = new Array();
-
-// Função para alternar entre os contêineres de formulário e listagem
-function navegar(page) {
-    if (page === 'cadastro') {
-        window.location.href = 'index.html';
-      } else if (page === 'tabela') {
-        window.location.href = 'table.html';
-      }
-}
+let produtos = new Array();
 
 // Formulário de cadastro
-document.getElementById('produto-form').addEventListener('submit', function (e) {
+document.getElementById('form-cadastro-produto').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const name = document.getElementById('nome').value;
     const description = document.getElementById('descricao').value;
     const price = parseFloat(document.getElementById('valor').value);
-    const available = Boolean(document.getElementById('avaliacao').value);
+    const available = Boolean(document.getElementById('disponibilidade').value);
 
-    if (localStorage.hasOwnProperty("products")) {
-        products = JSON.parse(localStorage.getItem("products"));
+    if (localStorage.hasOwnProperty("produtos")) {
+        produtos = JSON.parse(localStorage.getItem("produtos"));
     }
 
-    products.push({ name, description, price, available });
-    localStorage.setItem("products", JSON.stringify(products));
-    products.sort((a, b) => a.price - b.price);
+    produtos.push({ name, description, price, available });
+    localStorage.setItem("produtos", JSON.stringify(produtos));
+    produtos.sort((a, b) => a.price - b.price);
 
-    const feedback = document.getElementById('mensagem-feedback');
+    const feedback = document.getElementById('msg-feedback');
     feedback.style.display = 'block';
     setTimeout(() => {
         feedback.style.display = 'none';
-        navegar('tabela');
-    }, 1400);
+        window.location.href = 'table.html';
+    }, 1200);
 });
 
 
