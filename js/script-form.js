@@ -26,8 +26,12 @@ document.getElementById('produto-form').addEventListener('submit', function (e) 
     localStorage.setItem("products", JSON.stringify(products));
     products.sort((a, b) => a.price - b.price);
 
-    //updateProductList();
-    navegar('tabela');
+    const feedback = document.getElementById('mensagem-feedback');
+    feedback.style.display = 'block';
+    setTimeout(() => {
+        feedback.style.display = 'none';
+        navegar('tabela');
+    }, 1400);
 });
 
 

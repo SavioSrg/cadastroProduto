@@ -4,7 +4,7 @@
 :root {
   --cor-background: #ededf2;
   --cor-cabecalho: #a6aec1;
-  --cor-rodape: #6c788e;
+  --cor-destaque: #6c788e;
   --cor-texto: #040F1A;
   --cor-principal: #F2F2F2;
 
@@ -32,7 +32,7 @@ header {
   
 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -41,22 +41,36 @@ header>h1 {
   font-weight: 600;
 }
 
-.button-header{
+header>nav {
   display: flex;
   flex-basis: 420px;
   justify-content: space-around;
+}
 
-  text-decoration: none;
+.button-header{
+ text-decoration: none;
+ font-weight: 500;
+ padding: 10px 20px;
+ border-radius: 15px;
+ background-color: var(--cor-destaque);
+}
+
+main {
+  height: 84vh;
+  max-width: 900px;
+  margin: 0 auto;
+  flex: 1;
 }
 
 main>section {
-
   background-color: #cfd5e1;
 
-  width: 80vw;
-  margin: 20px auto;
+  width: 95%;
+  margin: auto;
+  margin-top: 4vh;
   padding: 20px;
   border-radius: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);;
 }
 
 form {
@@ -78,18 +92,50 @@ form select {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
+  margin-bottom: 5px;
 }
 
-form button {
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+::placeholder {
+  color: #888;
+  font-weight: 100;
+  font-size: 1em;
+
+}
+
+.button-form{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-basis: 0 100px;
+}
+
+form>button {
   padding: 10px 15px;
-  background-color: #6c788e;
+  background-color: var(--cor-destaque);
+  color: var(--cor-principal);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 form button:hover {
-  background-color: #fff;
+  background-color: var(--cor-destaque);
+  color: var(--cor-principal);
+}
+
+#mensagem-feedback {
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
 }
 
 table {
@@ -167,12 +213,10 @@ button:hover {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  height: 5vh;
   width: 100%;
   text-align: center;
-  background-color: var(--cor-rodape);
+  background-color: var(--cor-destaque);
   color: var(--cor-principal);
   padding: 10px;
 }

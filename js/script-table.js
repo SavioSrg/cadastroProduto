@@ -78,8 +78,6 @@ document.getElementById('edit-form').addEventListener('submit', function (e) {
 });
 
 function removerProdutos() {
-    localStorage.removeItem("products");
-    window.location.reload();
 }
 
 //Ordenar a tabela
@@ -87,6 +85,8 @@ let ordemNome = 1;
 let ordemValor = 0;
 let imagemOrdernarNome = document.getElementById('imagemOrdenarNome')
 let imagemOrdernarValores = document.getElementById('imagemOrdenarValor')
+imagemOrdernarNome.src = ("imagens/swap.svg");
+imagemOrdernarValores.src = ("imagens/arrow_upward.svg");
 
 function ordenarNomes() {
     if (ordemNome === 1) {
@@ -115,3 +115,12 @@ function ordenarValores() {
     imagemOrdernarNome.src = ("imagens/swap.svg");
     updateProductList();
 }
+
+const resetButton = document.getElementById('remove-products-btn');
+resetButton.addEventListener('click', () => {
+    const confirmReset = confirm('Tem certeza de que deseja limpar os campos do formulário?');
+    if (confirmReset) {
+        localStorage.removeItem("products");
+        window.location.reload();
+    }
+});
