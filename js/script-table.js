@@ -23,7 +23,7 @@ function updateProductList() {
         row.innerHTML = `
         <td>${product.name}</td>
         <td>${product.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</td>
-        <td>
+        <td id=coluna-botao>
           <button class="edit-btn" data-index="${index}">Editar</button>
           <button class="excluir-btn" data-index="${index}">Excluir</button>
         </td>
