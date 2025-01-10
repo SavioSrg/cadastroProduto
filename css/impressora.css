@@ -26,14 +26,22 @@ table {
 
 th,
 td {
-    border: 1px solid black !important;
-    padding: 5px !important;
+    border: 1px solid black;
+    padding: 5px;
     text-align: left;
-    color: black !important;
+    color: black;
+}
+
+#coluna-nome {
+ width: 70%;
+}
+
+#coluna-valor {
+    width: 30%;
 }
 
 main::after {
-    content: ' Relatório de produtos cadastrados, desenvolvido por Sávio Sérgio';
+    content: 'Relatório de Produtos Cadastrados - Desenvolvido por Sávio Sérgio';
     position: fixed;
     bottom: 0;
     left: 0;

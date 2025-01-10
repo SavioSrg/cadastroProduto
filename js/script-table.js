@@ -9,6 +9,7 @@ if (localStorage.hasOwnProperty("produtos")) {
     document.getElementById('modal-produtos-vazios').style.display = 'none';
 
 } else {
+    document.getElementById('btn-impressora').style.display = 'none';
     document.getElementById('btn-remover-produtos').style.display = 'none';
     alert("Tabela não possui dados, favor inserir dados")
 }

@@ -34,7 +34,7 @@
 
   /* Outras cores */
   --cor-borda: #ccc;
-  --cor-tabela-borda: #ddd;
+  --cor-tabela-borda: #ebebeb;
 }
 
 * {
@@ -209,7 +209,7 @@ table {
 table,
 th,
 td {
-  border: 1px solid var(--cor-tabela-borda);
+  border: 2px solid var(--cor-tabela-borda);
 }
 
 th,
@@ -218,7 +218,16 @@ td {
   text-align: left;
 }
 
+#coluna-nome {
+  width: 50%;
+}
+
+#coluna-valor {
+  width: 25%;
+}
+
 button {
+  margin: 5px;
   padding: 10px;
   background-color: var(--cor-botao);
   color: var(--cor-texto-claro);

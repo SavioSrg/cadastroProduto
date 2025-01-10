@@ -11,6 +11,7 @@
     <header>
         <h1>Lista de Produtos</h1>
         <nav>
+            <button id="btn-impressora" name="imprimir" value="Imprimir" onclick="window.print();"><img src="imagens/impressao.png" alt="impressora"></button>
             <button id="btn-cadastrar-produto">Cadastrar Novo Produto</button>
             <button id="btn-remover-produtos">Remover produtos</button>
         </nav>
@@ -20,10 +21,10 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Nome
+                        <th id="coluna-nome">Nome
                             <button type="button" onclick="ordenarNomes()"><img id="img-ordenar-nome"alt="Ordernar"></button>
                         </th>
-                        <th>Valor
+                        <th id="coluna-valor">Valor
                             <button onclick="ordenarValores()"><img id="img-ordenar-valor" alt="Ordenar"></button>
                         </th>
                         <th id="coluna-acao">Ações</th>
