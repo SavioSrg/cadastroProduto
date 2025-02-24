@@ -60,8 +60,9 @@ function removeFromLocalStorage(index) {
     produtos.splice(index, 1);
     localStorage.setItem("produtos", JSON.stringify(produtos));
     alert(`Item removido.`);
+    limparLocalStorageSeArrayVazio(produtos);
     produtos.sort((a, b) => a.price - b.price);
-    updateProductList()
+    updateProductList();
 }
 
 // Botão para cadastrar novo produto
@@ -149,3 +150,10 @@ resetButton.addEventListener('click', () => {
         window.location.reload();
     }
 });
+
+function limparLocalStorageSeArrayVazio(array) {
+    if (Array.isArray(array) && array.length === 0) {
+      localStorage.clear();
+      location.reload();
+    }
+  }
